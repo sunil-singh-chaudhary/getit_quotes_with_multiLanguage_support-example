@@ -1,0 +1,7 @@
+{
+    "language" : "عربي",
+
+    "@language":{
+        "description": "اللغة الحالية"
+    }
+}
