@@ -1,10 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:provider/provider.dart';
-
-import 'language_provider.dart';
+import '../main.dart';
+import 'languageconstant.dart';
 
 class LanguageSelectionDialog extends StatelessWidget {
   const LanguageSelectionDialog({super.key});
@@ -12,7 +10,7 @@ class LanguageSelectionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(AppLocalizations.of(context)!.language),
+      title: Text(translation(context).language), //get language text
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -36,9 +34,10 @@ class LanguageButton extends StatelessWidget {
       {super.key});
 
   void _changeLanguage() async {
-    final languageProvider =
-        Provider.of<LanguageProvider>(context, listen: false);
-    await languageProvider.setLanguage(locale);
+    //todo set Language new selected Code
+    Locale _locale = await setLocaleTopref(locale.languageCode);
+    MyApp.setLocale(context, _locale);
+
     Navigator.pop(context); // Close the dialog
     restartApp(context);
   }
