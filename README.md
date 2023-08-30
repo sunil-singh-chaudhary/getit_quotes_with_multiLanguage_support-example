@@ -1,7 +1,7 @@
 # getit_quotes_example with Localization in flutter
 
 
-# FOr Localization
+# For Localization
  1. add dependecies in yml file 
        flutter_localization: ^0.1.13
        intl: ^0.18.1  
@@ -39,3 +39,13 @@
    
    9. important for changing language support from app we are using provider with sharedpreference
       becuase of   AppLocalizations.delegate.load(newLocale); is not working when we set new lanugage and restarted the application i.e
+
+
+
+
+
+https://github.com/sunil-singh-chaudhary/getit_quotes_with_multiLanguage_support-example/assets/10194731/dc0dd9a1-4f0b-4b8b-bad8-669607adb3a4
+
+
+
+      
