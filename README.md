@@ -4,19 +4,21 @@
 # For Localization
  1. add dependecies in yml file 
 
-   ```bash
+ ```bash
        flutter_localization: ^0.1.13
        intl: ^0.18.1  
 
-      ```
+
+  ```
 
  2. add this dependencies under dev_dependencies
-    ```bash
+   
+ ```bash
 
        flutter:
      generate: true
 
-   ```
+```
 
 
   3. Create a ymal file in root of your project a l10n.yaml file
@@ -27,17 +29,18 @@
 
   5. inside l10n.yaml custom file add these below path lines
 
-      ```bash
+
+ ```bash
 
      arb-dir : lib/l10n    //source
      template-arb-file: app_en.arb    //to convert
      output-localization-file: app_localizations.dart    //out output generate file will be here 
 
-    ``` 
+ ``` 
 
   6. at last add this below lines in materialApp of main.dart file 
 
-      ```bash
+ ```bash
 
         locale: const Locale('en'), //default en
         supportedLocales: L10n.all, //add all
@@ -47,20 +50,25 @@
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-   ```
+
+ ```
    
    7. import this
-         ```bash
+         
+```bash
 
       import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-    ```
+ 
+```
 
    8. HOw to use
+ 
 
-   ```bash
+```bash
 
       AppLocalizations.of(context)!.language
-   ```
+
+ ```
 
    9. important for changing language support from app we are using provider with sharedpreference
       becuase of   AppLocalizations.delegate.load(newLocale); is not working when we set new lanugage and restarted the application i.e
@@ -68,11 +76,11 @@
 ## For auto generate thes Localization File inside .dart_tool/gen_l10n
 
 
-   ```bash
+```bash
 
    flutter run 
 
-   ```
+```
 
 
 
